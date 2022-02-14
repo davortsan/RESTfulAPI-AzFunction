@@ -63,20 +63,20 @@ namespace RESTfulAPIAzFunction
             return new OkObjectResult(user);
         }
 
-        [FunctionName("GetUserByUsername")]
-        public static IActionResult GetUserByUsername(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "user/{username}")] HttpRequest req,
-            ILogger log, string username)
-        {
-            log.LogInformation("Getting user using the username value.");
+        //[FunctionName("GetUserByUsername")]
+        //public static IActionResult GetUserByUsername(
+        //    [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "user/{username}")] HttpRequest req,
+        //    ILogger log, string username)
+        //{
+        //    log.LogInformation("Getting user using the username value.");
 
-            var user = Items.FirstOrDefault(u => u.Username == username);
+        //    var user = Items.FirstOrDefault(u => u.Username == username);
 
-            if (user == null)
-            { return new NotFoundResult(); }
+        //    if (user == null)
+        //    { return new NotFoundResult(); }
 
-            return new OkObjectResult(user);
-        }
+        //    return new OkObjectResult(user);
+        //}
 
 
         [FunctionName("UpdateUser")]
